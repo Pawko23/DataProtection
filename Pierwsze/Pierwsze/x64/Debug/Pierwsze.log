@@ -1,0 +1,4 @@
+﻿  Pierwsze.cpp
+C:\Users\aleks\Desktop\Pendrive\Studia\Vl SEM\Ochrona Danych\Pierwsze\Pierwsze\Pierwsze.cpp(52,16): warning C4244: "inicjowanie": konwersja z "double" do "long", możliwa utrata danych
+C:\Users\aleks\Desktop\Pendrive\Studia\Vl SEM\Ochrona Danych\Pierwsze\Pierwsze\Pierwsze.cpp(81,24): warning C4244: "inicjowanie": konwersja z "double" do "long", możliwa utrata danych
+  Pierwsze.vcxproj -> C:\Users\aleks\Desktop\Pendrive\Studia\Vl SEM\Ochrona Danych\Pierwsze\Pierwsze\x64\Debug\Pierwsze.exe

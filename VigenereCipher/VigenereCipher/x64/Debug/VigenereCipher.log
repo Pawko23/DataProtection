@@ -1,0 +1,4 @@
+﻿  VigenereCipher.cpp
+C:\Users\aleks\Desktop\Pendrive\Studia\Vl SEM\Ochrona Danych\VigenereCipher\VigenereCipher\VigenereCipher.cpp(29,26): warning C4267: "=": konwersja z "size_t" do "int", możliwa utrata danych
+C:\Users\aleks\Desktop\Pendrive\Studia\Vl SEM\Ochrona Danych\VigenereCipher\VigenereCipher\VigenereCipher.cpp(116,14): warning C4101: "column_name": lokalna zmienna, do której nie istnieje odwołanie
+  VigenereCipher.vcxproj -> C:\Users\aleks\Desktop\Pendrive\Studia\Vl SEM\Ochrona Danych\VigenereCipher\VigenereCipher\x64\Debug\VigenereCipher.exe

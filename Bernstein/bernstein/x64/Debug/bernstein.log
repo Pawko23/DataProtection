@@ -1,0 +1,4 @@
+﻿  bernstein.cpp
+C:\Users\aleks\Desktop\Pendrive\Studia\Vl SEM\Ochrona Danych\Bernstein\bernstein\bernstein.cpp(57,37): warning C4267: "+=": konwersja z "size_t" do "unsigned long", możliwa utrata danych
+C:\Users\aleks\Desktop\Pendrive\Studia\Vl SEM\Ochrona Danych\Bernstein\bernstein\bernstein.cpp(64,15): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  bernstein.vcxproj -> C:\Users\aleks\Desktop\Pendrive\Studia\Vl SEM\Ochrona Danych\Bernstein\bernstein\x64\Debug\bernstein.exe
