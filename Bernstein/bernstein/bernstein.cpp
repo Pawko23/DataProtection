@@ -45,9 +45,6 @@ void printCollissions(const vector<string>& strings, const vector<unsigned long>
     unsigned long sum = 0;
     for (const auto& entry : hashIndices) {
         if (entry.second.size() > 1) {
-            //cout << "Number of colissions: " << entry.second.size() << endl;
-            /*sum += entry.second.size();*/
-            //cout << "Sample colissions: " << endl;
             for (int index : entry.second) {
                 cout << "Hash: " << hashes[index] << endl;
                 cout << "String: " << strings[index] << endl;
@@ -62,68 +59,44 @@ void printCollissions(const vector<string>& strings, const vector<unsigned long>
 int main()
 {
     srand(time(NULL));
-
     vector<pair<unsigned long, string>> sampleCollisions;
-
-    //generating 100 000 strings 8-char
+    
     vector<string>c1Strings;
     for (int i = 0; i < 100000; i++) {
         string randomString = generateRandomString(8);
         c1Strings.push_back(randomString);
     }
-    //DEBUG
-    /*for (string str : c1Strings) {
-        cout << str << endl;
-    }*/
 
-
-    //generating 100 000 strings 100-char
     vector<string> c2Strings;
     for (int i = 0; i < 100000; i++) {
         string randomString = generateRandomString(100);
         c2Strings.push_back(randomString);
     }
-    //DEBUG
-    /*for (string str : c2Strings) {
-        cout << str << endl;
-    }*/
 
-
-    //calculating bernstein hash for C1
     vector<unsigned long>c1BernsteinHashes;
     for (const string& str : c1Strings) {
         unsigned long hash = bernstein(str);
         c1BernsteinHashes.push_back(hash);
     }
-    /*for (unsigned int i : c1BernsteinHashes) {
-        cout << i << endl;
-    }*/
-
-    //calculating bernstein hash for C2
+    
     vector<unsigned long>c2BernsteinHashes;
     for (const string& str : c2Strings) {
         unsigned long hash = bernstein(str);
         c2BernsteinHashes.push_back(hash);
     }
-    /*for (unsigned long long i : c1BernsteinHashes) {
-        cout << i << endl;
-    }*/
 
-    //calculating adler32checksum for C1
     vector<unsigned long> c1Adler32Checksums;
     for (const string& str : c1Strings) {
         unsigned long checksum = adler32Checksum(str);
         c1Adler32Checksums.push_back(checksum);
     }
-
-    //calculating adler32checksum for C2
+    
     vector<unsigned long> c2Adler32Checksums;
     for (const string& str : c2Strings) {
         unsigned long checksum = adler32Checksum(str);
         c2Adler32Checksums.push_back(checksum);
     }
-
-    //printing info
+    
     cout << "Colissions for Bernstein hash in C1: " << endl;
     printCollissions(c1Strings, c1BernsteinHashes, sampleCollisions);
     cout << "Colissions for Bernstein hash in C2: " << endl;
