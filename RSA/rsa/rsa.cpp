@@ -28,25 +28,6 @@ long long invmod(long long a, long long b) {
     return x1;
 }
 
-//long long modfun(long long b, long long exp, long long modulo) {
-//    if (modulo == 1)
-//        return 0;
-//
-//    int result = 1;
-//    b = b % modulo;
-//
-//    while (exp > 0) {
-//        if (exp % 2 == 1)
-//            result = (result * b) % modulo;
-//
-//        exp = exp >> 1;
-//        b = (b * b) % modulo;
-//    }
-//
-//    return result;
-//}
-
-
 int main()
 {
     long long p, q, n, fi, e, d;
@@ -95,7 +76,6 @@ int main()
         }
     }
     cout << "Decrypted: " << decryptResult << endl;
-
-
+    
     return 0;
 }
