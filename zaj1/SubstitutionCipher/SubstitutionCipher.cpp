@@ -16,7 +16,6 @@ int main()
     cout << "Enter key: ";
     cin >> key;
 
-
     ifstream file("enc.txt");
     ofstream result("encresult.txt");
     ofstream result2("decresult.txt");
@@ -25,12 +24,7 @@ int main()
     for (int i = 0; i < alphabet.length(); i++) {
         dict[alphabet[i]] = alphabet[(i + key) % alphabet.length()];
     }
-
-    /*for (auto const& entry : dict) {
-        cout << entry.first << " -> " << entry.second << endl;
-    }*/
-
-
+    
     map<char, char> dict2;
     for (int i = 0; i < alphabet.length(); i++) {
         dict2[alphabet[i]] = alphabet[(i - key) % alphabet.length()];
@@ -52,8 +46,6 @@ int main()
                 }
             }
             result << ciphered << endl;
-
-            
             ciphered = "";
         }
         file.close();
@@ -76,13 +68,8 @@ int main()
             decrypted = "";
         }
         file.close();
-
-
         decrypted = "";
         file.close();
     }
-
-
-
     return 0;
 }
