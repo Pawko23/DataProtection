@@ -63,13 +63,10 @@ double maxAvg(string cipheredText) {
     int maxKeyValue = 0;
     for (int h = 2; h <= 20; h++) {
         vector<string> groups(h);
-        //Podzial na grupy
         for (int j = 0; j < cipheredText.length(); j++) {
             int index = j % h;
             groups[index] += cipheredText[j];
         }
-
-        //srednie IC
         double avgIC = 0.0;
         for (const string& group : groups) {
             map<char, int> groupDict = dictionary(group);
@@ -77,8 +74,6 @@ double maxAvg(string cipheredText) {
         }
         avgIC /= h;
         cout << "Avg IC for " << h << " group is: " << avgIC << endl;
-        //cout << "Max Key Value for " << h << " group is: " << maxKeyValue << endl;
-        //Update wartosci
         if (avgIC > maxAvgIC) {
             maxAvgIC = avgIC;
             maxKeyValue = h;
@@ -100,11 +95,8 @@ int main()
             text += line + " ";
         }
 
-        //cout << "Base text from file: " << text;
         text = transformToUpper(text);
         map<char, int> baseDictionary = dictionary(text);
-        //cout << endl;
-        //cout << "Model (base) IC: " << IC(text, baseDictionary) << endl;
         for (auto it = baseDictionary.begin(); it != baseDictionary.end(); it++) {
             cout << it->first << ": " << it->second << endl;
         }
@@ -117,13 +109,6 @@ int main()
     cout << endl;
     cout << endl;
     cout << "<-----------------------------------------CIPHERED VIGENERE----------------------------------------->" << endl;
-    /*for (auto it = percentageShare.begin(); it != percentageShare.end(); it++) {
-        it->second = it->second / static_cast<double>(n) * 100;
-    }*/
-
-    //model IC jest punktem odniesienia dla innych tekstów. Obliczamy go dla tekstu bazowego
-    //i następne teksty porównujemy do niego aby określić czy dany tekst jest napisany językiem
-    //zbliżonym lub nie
 
     file.open("example.txt", ios::in);
     if (file.good() == true) {
@@ -136,7 +121,6 @@ int main()
         cout << ciphered;
         map<char, int> cipheredDictionary = dictionary(ciphered);
         cout << endl;
-        //cout << "Model (Vigenere Ciphered) IC: " << IC(ciphered, cipheredDictionary) << endl;
         cout << "Max avg for h = 2...20: " << maxAvg(ciphered) << endl;
         for (auto it = cipheredDictionary.begin(); it != cipheredDictionary.end(); it++) {
             cout << it->first << ": " << it->second << endl;
