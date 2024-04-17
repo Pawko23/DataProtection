@@ -18,13 +18,8 @@ unsigned long long compute(unsigned long long g, unsigned long long y, unsigned 
 
 int main()
 {
-    //ALICE
     unsigned long long a, A;
-
-    //PUBLIC AREA
     unsigned long long p, g;
-
-    //BOB
     unsigned long long b, B;
 
     cout << "Enter p: ";
@@ -34,13 +29,11 @@ int main()
     cout << "Enter a: ";
     cin >> b;
 
-    //Now they are exchangind those variables A and B
     B = compute(g, b, p);
     cout << "B: " << B << endl;
     cout << endl;
     cout << "Enter A: ";
     cin >> A;
-
-    //So Alicee gets public key B, and Bob gets public key A. Now compute symetric keys
+    
     cout << "Bob (K): " << compute(A, b, p) << endl;
 }
