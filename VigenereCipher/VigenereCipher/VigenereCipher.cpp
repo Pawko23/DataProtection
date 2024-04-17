@@ -43,15 +43,7 @@ int main()
         }
         alphabet[n - 1] = temp;
     }
-
-    /*for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            cout << table[i][j] << " ";
-        }
-        cout << endl;
-    }*/
-
-
+    
     string result = "";
     int row = -1, column = -1;
     int password_index = 0;
@@ -140,15 +132,12 @@ int main()
                                 }
                             }
                         }
-
                         if (row != -1 && column != -1) {
                             result += table[0][column];
                         }
                         else {
                             result += example[x];
                         }
-
-
                         if (password_index == password.length() - 1) {
                             password_index = 0;
                         }
