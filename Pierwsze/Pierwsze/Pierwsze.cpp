@@ -46,7 +46,6 @@ bool PrimeTDM(long int n) {
     return true;
 }
 
-
 bool lucas_lehmer(int p) {
     unsigned long long int S = 4;
     long int M = pow(2, p) - 1;
@@ -69,10 +68,10 @@ bool isPrime(int n)
     return true;
 }
 
-
 int main()
 {
     TDM_in_range();
+    
     cout << endl;
     cout << endl;
 
